@@ -435,7 +435,9 @@
     if (buttonIndex == 0) {
       [[UIApplication sharedApplication] openURL:self.actionSheetURL];
     } else if (buttonIndex == 1) {
-      [[UIPasteboard generalPasteboard] setURL:self.actionSheetURL];
+      if (self.actionSheetURL) {
+        [[UIPasteboard generalPasteboard] setURL:self.actionSheetURL];
+      }
     }
   }
 }
